@@ -1,7 +1,7 @@
 /*
- * GDevelop Core
- * Copyright 2008-2016 Florian Rival (Florian.Rival@gmail.com). All rights reserved.
- * This project is released under the MIT License.
+ * Creoflow 核心库
+ * 版权所有 2008-2016 Florian Rival (Florian.Rival@gmail.com)。保留所有权利。
+ * 本项目基于 MIT 许可证发布。
  */
 
 #ifndef COMMONTOOLS_H
@@ -30,7 +30,7 @@ inline double Pi()
 
 #ifdef __GNUC__
 /**
- * Round the number to the nearest integer
+ * 将数字四舍五入到最接近的整数
  * \ingroup CommonProgrammingTools
  */
 inline int Round(float x)
@@ -39,7 +39,7 @@ inline int Round(float x)
 }
 #else
 /**
- * Round the number to the nearest integer
+ * 将数字四舍五入到最接近的整数
  * \ingroup CommonProgrammingTools
  */
 inline double Round( double d )

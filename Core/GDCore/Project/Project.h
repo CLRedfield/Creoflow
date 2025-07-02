@@ -1,7 +1,7 @@
 /*
- * GDevelop Core
- * Copyright 2008-2016 Florian Rival (Florian.Rival@gmail.com). All rights
- * reserved. This project is released under the MIT License.
+ * Creoflow 核心库
+ * 版权所有 2008-2016 Florian Rival (Florian.Rival@gmail.com)。保留所有权利。
+ * 本项目基于 MIT 许可证发布。
  */
 
 #pragma once
@@ -42,8 +42,8 @@ class SerializerElement;
 
 namespace gd {
 /**
- * \brief Base class representing a project (game), including all resources,
- * scenes, objects, extensions...
+ * \brief 代表项目（游戏）的基类，包括所有资源、
+ * 场景、对象、扩展...
  *
  * \ingroup PlatformDefinition
  */
@@ -54,62 +54,62 @@ class GD_CORE_API Project {
   virtual ~Project();
   Project& operator=(const Project& rhs);
 
-  /** \name Common properties
-   * Some properties for the project
+  /** \name 通用属性
+   * 项目的一些属性
    */
   ///@{
 
   /**
-   * \brief Change the project name
+   * \brief 设置项目名称
    */
   void SetName(const gd::String& name_) { name = name_; };
 
   /**
-   * \brief Get the project name
+   * \brief 获取项目名称
    */
   const gd::String& GetName() const { return name; }
 
   /**
-   * \brief Get the categories/genres of the project.
+   * \brief 获取项目的类别/类型。
    */
   const std::vector<gd::String>& GetCategories() const { return categories; };
 
   /**
-   * \brief Get the categories of the project, to modify them (non-const).
+   * \brief 获取项目的类别，以便修改它们（非常量）。
    */
   std::vector<gd::String>& GetCategories() { return categories; };
 
   /**
-   * \brief Change the project description
+   * \brief 设置项目描述
    */
   void SetDescription(const gd::String& description_) {
     description = description_;
   };
 
   /**
-   * \brief Get the project description
+   * \brief 获取项目描述
    */
   const gd::String& GetDescription() const { return description; }
 
   /**
-   * \brief Change the version of the project.
-   * This can be freely set, but should follow "X.Y.Z" format for compatibility
-   * with some exporters.
+   * \brief 设置项目版本。
+   * 此版本可以自由设置，但为了与某些导出器兼容，
+   * 应遵循"X.Y.Z"格式。
    */
   void SetVersion(const gd::String& version_) { version = version_; };
 
   /**
-   * \brief Get the project version.
+   * \brief 获取项目版本。
    */
   const gd::String& GetVersion() const { return version; }
 
   /**
-   * \brief Change the author of the project.
+   * \brief 设置项目作者。
    */
   void SetAuthor(const gd::String& author_) { author = author_; };
 
   /**
-   * \brief Get the project author name.
+   * \brief 获取项目作者姓名。
    */
   const gd::String& GetAuthor() const { return author; }
 

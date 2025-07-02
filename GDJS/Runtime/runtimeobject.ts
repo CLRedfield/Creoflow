@@ -1,14 +1,14 @@
 /*
- * GDevelop JS Platform
- * Copyright 2013-2016 Florian Rival (Florian.Rival@gmail.com). All rights reserved.
- * This project is released under the MIT License.
+ * Creoflow JS 平台
+ * 版权所有 2013-2016 Florian Rival (Florian.Rival@gmail.com)。保留所有权利。
+ * 本项目基于 MIT 许可证发布。
  */
 namespace gdjs {
-  /** An axis-aligned bounding box. Used to represents a box around an object for example. */
+  /** 轴对齐边界框。用于表示对象周围的框，例如。 */
   export type AABB = {
-    /** The [x,y] coordinates of the top left point */
+    /** 左上角点的 [x,y] 坐标 */
     min: FloatPoint;
-    /** The [x,y] coordinates of the bottom right point */
+    /** 右下角点的 [x,y] 坐标 */
     max: FloatPoint;
   };
 
@@ -17,8 +17,8 @@ namespace gdjs {
   };
 
   /**
-   * Return the squared bounding radius of an object given its width/height and its center of rotation
-   * (relative to the top-left of the object). The radius is relative to the center of rotation.
+   * 根据对象的宽度/高度和旋转中心（相对于对象左上角）返回对象的平方边界半径。
+   * 半径相对于旋转中心。
    */
   const computeSqBoundingRadius = (
     width: float,
@@ -32,8 +32,8 @@ namespace gdjs {
   };
 
   /**
-   * Arrays and data structure that are (re)used by
-   * {@link RuntimeObject.separateFromObjects} to avoid any allocation.
+   * 由 {@link RuntimeObject.separateFromObjects} （重新）使用的数组和数据结构，
+   * 以避免任何内存分配。
    */
   const separateFromObjectsStatics: {
     moveXArray: Array<float>;
@@ -148,10 +148,10 @@ namespace gdjs {
   };
 
   /**
-   * RuntimeObject represents an object being used on a RuntimeScene.
+   * RuntimeObject 表示在 RuntimeScene 上使用的对象。
    *
-   * A `gdjs.RuntimeObject` should not be instantiated directly, always a child class
-   * (because gdjs.RuntimeObject don't call onCreated at the end of its constructor).
+   * `gdjs.RuntimeObject` 不应该直接实例化，总是应该使用子类
+   * （因为 gdjs.RuntimeObject 在其构造函数结束时不会调用 onCreated）。
    */
   export class RuntimeObject implements EffectsTarget, gdjs.EffectHandler {
     name: string;

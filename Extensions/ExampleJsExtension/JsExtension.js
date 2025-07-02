@@ -1,16 +1,16 @@
 //@ts-check
 /// <reference path="../JsExtensionTypes.d.ts" />
 /**
- * This is a declaration of an extension for GDevelop 5.
+ * 这是一个 Creoflow 5 扩展的声明。
  *
- * ℹ️ Changes in this file are watched and automatically imported if the editor
- * is running. You can also manually run `node import-GDJS-Runtime.js` (in newIDE/app/scripts).
+ * ℹ️ 如果编辑器正在运行，此文件中的更改会被监视并自动导入。
+ * 您也可以手动运行 `node import-GDJS-Runtime.js`（在 newIDE/app/scripts 中）。
  *
- * The file must be named "JsExtension.js", otherwise GDevelop won't load it.
- * ⚠️ If you make a change and the extension is not loaded, open the developer console
- * and search for any errors.
+ * 文件必须命名为"JsExtension.js"，否则 Creoflow 不会加载它。
+ * ⚠️ 如果您进行了更改但扩展没有被加载，请打开开发者控制台
+ * 并查找任何错误。
  *
- * More information on https://github.com/4ian/GDevelop/blob/master/newIDE/README-extensions.md
+ * 更多信息请参阅 https://github.com/4ian/GDevelop/blob/master/newIDE/README-extensions.md
  */
 
 /** @type {ExtensionModule} */
@@ -19,31 +19,31 @@ module.exports = {
     const extension = new gd.PlatformExtension();
     extension.setExtensionInformation(
       'MyDummyExtension',
-      _('My Dummy Extension'),
-      _('An example of a declaration of an extension'),
+      _('我的示例扩展'),
+      _('扩展声明的示例'),
       'Florian Rival',
       'MIT'
     );
     extension
-      .addInstructionOrExpressionGroupMetadata(_('My Dummy Extension'))
+      .addInstructionOrExpressionGroupMetadata(_('我的示例扩展'))
       .setIcon('CppPlatform/Extensions/topdownmovementicon.png');
 
-    // Register Properties
+    // 注册属性
     extension
       .registerProperty('DummyPropertyString')
-      .setLabel(_('Dummy Property Name'))
-      .setDescription('Type in anything :)')
+      .setLabel(_('示例属性名称'))
+      .setDescription('输入任何内容 :)')
       .setType('string');
 
     extension
       .registerProperty('DummyPropertyNumber')
-      .setLabel(_('Dummy Numeric Property Name'))
-      .setDescription('Only numbers here ;)')
+      .setLabel(_('示例数值属性名称'))
+      .setDescription('这里只能输入数字 ;)')
       .setType('number');
 
     extension
       .registerProperty('DummyPropertyBoolean')
-      .setDescription(_('A boolean property'))
+      .setDescription(_('布尔属性'))
       .setType('boolean');
 
     // Register Cordova/NPM dependencies

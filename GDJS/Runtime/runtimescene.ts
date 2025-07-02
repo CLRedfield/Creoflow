@@ -1,14 +1,14 @@
 /*
- * GDevelop JS Platform
- * Copyright 2013-2016 Florian Rival (Florian.Rival@gmail.com). All rights reserved.
- * This project is released under the MIT License.
+ * Creoflow JS 平台
+ * 版权所有 2013-2016 Florian Rival (Florian.Rival@gmail.com)。保留所有权利。
+ * 本项目基于 MIT 许可证发布。
  */
 namespace gdjs {
   const logger = new gdjs.Logger('RuntimeScene');
   const setupWarningLogger = new gdjs.Logger('RuntimeScene (setup warnings)');
 
   /**
-   * A scene being played, containing instances of objects rendered on screen.
+   * 正在播放的场景，包含在屏幕上渲染的对象实例。
    */
   export class RuntimeScene extends gdjs.RuntimeInstanceContainer {
     _eventsFunction: null | ((runtimeScene: RuntimeScene) => void) = null;
@@ -25,16 +25,16 @@ namespace gdjs {
     _requestedScene: string = '';
     private _asyncTasksManager = new gdjs.AsyncTasksManager();
 
-    /** True if loadFromScene was called and the scene is being played. */
+    /** 如果调用了 loadFromScene 并且场景正在播放，则为 true。 */
     _isLoaded: boolean = false;
-    /** True in the first frame after resuming the paused scene */
+    /** 在恢复暂停的场景后的第一帧中为 true */
     _isJustResumed: boolean = false;
 
     _requestedChange: SceneChangeRequest;
-    /** Black background by default. */
+    /** 默认为黑色背景。 */
     _backgroundColor: integer = 0;
 
-    /** Should the canvas be cleared before this scene rendering. */
+    /** 在此场景渲染之前是否应清除画布。 */
     _clearCanvas: boolean = true;
 
     _onceTriggers: OnceTriggers;
@@ -47,15 +47,15 @@ namespace gdjs {
     _cachedGameResolutionHeight: integer;
 
     /**
-     * A network ID associated to the scene to be used
-     * for multiplayer, to identify the scene across peers.
-     * A scene can have its networkId re-generated during the game, meaning
-     * that the scene is re-created on every peer.
+     * 与场景关联的网络 ID，用于多人游戏，
+     * 以在各个对等方之间识别场景。
+     * 场景可以在游戏期间重新生成其 networkId，
+     * 这意味着场景在每个对等方上都会重新创建。
      */
     networkId: string | null = null;
 
     /**
-     * @param runtimeGame The game associated to this scene.
+     * @param runtimeGame 与此场景关联的游戏。
      */
     constructor(runtimeGame: gdjs.RuntimeGame) {
       super();

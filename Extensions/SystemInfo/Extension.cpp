@@ -1,8 +1,8 @@
 /**
 
-GDevelop - SystemInfo Extension
-Copyright (c) 2016 Florian Rival (Florian.Rival@gmail.com)
-This project is released under the MIT License.
+Creoflow - 系统信息扩展
+版权所有 (c) 2016 Florian Rival (Florian.Rival@gmail.com)
+本项目基于 MIT 许可证发布。
 */
 
 #include "GDCore/Extensions/PlatformExtension.h"
@@ -12,12 +12,12 @@ void DeclareSystemInfoExtension(gd::PlatformExtension& extension) {
   extension
       .SetExtensionInformation(
           "SystemInfo",
-          _("System information"),
-          _("Get information about the system and device running the game."),
+          _("系统信息"),
+          _("获取运行游戏的系统和设备信息。"),
           "Florian Rival",
-          "Open source (MIT License)")
+          "开源 (MIT 许可证)")
       .SetCategory("Advanced");
-  extension.AddInstructionOrExpressionGroupMetadata(_("System information"))
+  extension.AddInstructionOrExpressionGroupMetadata(_("系统信息"))
       .SetIcon("CppPlatform/Extensions/systeminfoicon.png");
 
   extension.AddCondition(
